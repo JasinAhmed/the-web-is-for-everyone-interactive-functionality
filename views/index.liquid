@@ -1,0 +1,105 @@
+{% render 'partials/head.liquid', title: 'Home' %}
+
+<header class="site-header">
+
+  <nav class="snelle-links-nav">
+    <ul class="snelle-links-lijst pagina-container">
+      <li><a href="#faq">FAQ's</a></li>
+      <li><a href="#over-ons">Over ons</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hoofd-navigatie-balk">
+    <nav class="hoofd-navigatie pagina-container">
+      <a href="/" class="logo-link">
+        <img src="/style/assets/logoad.png" alt="Overlegplatform Ad's" width="180" height="45">
+      </a>
+
+      <button class="hamburger" id="hamburger">
+        ☰
+      </button>
+
+      <ul class="hoofd-menu" id="hoofd-menu">
+        <li><a class="menu-link actief" href="/">Home</a></li>
+        <li><a class="menu-link" href="#uitleg">Over Ad's</a></li>
+        <li><a class="menu-link" href="#publicaties">Publicaties</a></li>
+        <li><a class="menu-link" href="/genomineerden">Talent Award</a></li>
+        <li><a class="menu-link" href="#nieuws">Nieuws</a></li>
+        <li class="menu-cta">
+          <a href="#ad-dag" class="knop-cta">Kom naar Ad-dag</a>
+        </li>
+      </ul>
+
+      <a href="#ad-dag" class="knop-cta desktop-cta">Kom naar Ad-dag</a>
+    </nav>
+  </div>
+
+</header>
+
+<main class="pagina-container" id="inhoud">
+
+  <section class="hero-sectie">
+    <header class="hero-tekst">
+      <h1>Het landelijke platform voor Associate degrees</h1>
+      <p>
+        Ad-netwerk samen om kennis te delen, samen te werken en de kwaliteit
+        en zichtbaarheid van Associate degrees te versterken.
+      </p>
+
+      <p class="hero-acties">
+        <a class="knop-outline" href="#uitleg">Meer over Ad's</a>
+        <a class="knop-blauw" href="#ad-dag">Kom naar de Ad-dag →</a>
+      </p>
+    </header>
+
+    <figure class="hero-afbeelding">
+      <img src="/style/assets/bannerpic.jpg" alt="Sfeerbeeld van Associate Degrees" width="1100" height="700">
+    </figure>
+  </section>
+
+  <section class="nieuws-sectie" id="nieuws">
+    <header class="sectie-kop">
+      <span class="divider-lijn"></span>
+      <h2>Het laatste nieuws</h2>
+      <span class="divider-lijn"></span>
+    </header>
+
+    {% if news and news.size > 0 %}
+      <ul class="nieuws-grid">
+        {% for item in news %}
+          <li>
+            <article class="nieuws-kaart">
+              <figure class="kaart-afbeelding">
+                {% if item.image %}
+                  <img src="https://fdnd-agency.directus.app/assets/{{ item.image }}" alt="{{ item.title }}" width="360" height="240">
+                {% else %}
+                  <img src="/style/assets/ad-dag.jpg" alt="{{ item.title }}" width="360" height="240">
+                {% endif %}
+              </figure>
+
+              <div class="nieuws-inhoud">
+                {% if item.date %}
+                  <p class="nieuws-meta">{{ item.date }}</p>
+                {% endif %}
+
+                <h3>{{ item.title }}</h3>
+
+                {% if item.description %}
+                  <p>{{ item.description }}</p>
+                {% endif %}
+
+                <a class="tekst-link" href="#">Lees meer</a>
+              </div>
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Er zijn nog geen nieuwsberichten.</p>
+    {% endif %}
+  </section>
+
+</main>
+
+{% render 'partials/foot.liquid' %}
