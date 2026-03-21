@@ -12,7 +12,7 @@
   <section class="hoofd-navigatie-balk">
     <nav class="hoofd-navigatie pagina-container">
       <a href="/" class="logo-link">
-        <img src="/style/assets/logoad.png" alt="Overlegplatform Ad's" width="180" height="45">
+        <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
       </a>
 
       <button class="hamburger" id="hamburger">☰</button>
@@ -71,7 +71,7 @@
       {% endif %}
 
       {% if nominee.date %}
-        <p><strong>Datum:</strong> {{ nominee.date }}</p>
+        <p><strong>Datum:</strong> {{ nominee.date | date: "%d-%m-%Y" }}</p>
       {% endif %}
 
       {% if nominee.excerpt %}
@@ -93,14 +93,14 @@
   <section class="reacties-sectie">
     <h2>Reacties</h2>
 
-    {% if reacties and reacties.length  0 %}
+    {% if reacties and reacties.length > 0 %}
       <ul class="reacties-lijst">
         {% for reactie in reacties %}
           <li class="reactie-kaart">
             <p>{{ reactie.comment }}</p>
             <p><strong>Geplaatst door:</strong> {{ reactie.name }}</p>
             {% if reactie.date_created %}
-              <p>{{ reactie.date_created }}</p>
+              <p>{{ reactie.date_created | date: "%d-%m-%Y" }}</p>
             {% endif %}
           </li>
         {% endfor %}
