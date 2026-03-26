@@ -92,7 +92,9 @@ a:hover{
   text-decoration:underline;
 }
 
-button{
+button,
+input,
+textarea{
   font:inherit;
 }
 
@@ -194,20 +196,16 @@ ul{
   display:flex;
   align-items:center;
   gap:1rem;
-  min-height:124px;
+  min-height:96px;
   margin-top:0;
 }
 
 /* --- Logo --- */
-.logo-link{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-}
-
 .logo-link img{
-  width:240px;
+  width:160px;
+  max-height:56px;
   height:auto;
+  object-fit:contain;
 }
 
 /* --- Hamburger mobiel --- */
@@ -286,6 +284,7 @@ ul{
   font-size:1rem;
   white-space:nowrap;
   transition:background .2s ease, transform .2s ease;
+  cursor:pointer;
 }
 
 .knop-cta:hover{
@@ -715,7 +714,126 @@ ul{
 }
 
 
-/* 11) TABLET ≥ 660px */
+/* 11) REACTIES + FORMULIER */
+
+.reacties-layout{
+  display:grid;
+  gap:var(--s5);
+  margin-top:var(--s7);
+}
+
+.reactie-formulier-sectie,
+.reacties-sectie{
+  margin-top:0;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:var(--s5);
+}
+
+.reactie-formulier-sectie{
+  order:1;
+}
+
+.reacties-sectie{
+  order:2;
+}
+
+.reacties-sectie h2,
+.reactie-formulier-sectie h2{
+  margin-bottom:var(--s5);
+}
+
+.reacties-lijst{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:var(--s4);
+}
+
+.reactie-kaart{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:var(--s4);
+}
+
+.reactie-inhoud{
+  margin:0;
+}
+
+.reactie-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:var(--s4);
+  margin-bottom:var(--s3);
+}
+
+.reactie-naam{
+  margin:0;
+  font-weight:700;
+  color:var(--tekst);
+}
+
+.reactie-datum{
+  margin:0;
+  color:var(--tekst-zacht);
+  font-size:.95rem;
+  white-space:nowrap;
+  text-align:right;
+}
+
+.reactie-bericht{
+  margin:0;
+  color:var(--tekst-zacht);
+  word-break:break-word;
+  overflow-wrap:break-word;
+}
+
+.reactie-formulier{
+  display:grid;
+  gap:var(--s3);
+  max-width:100%;
+}
+
+.reactie-formulier label{
+  font-weight:600;
+  color:var(--tekst);
+}
+
+.reactie-formulier input,
+.reactie-formulier textarea{
+  width:100%;
+  font:inherit;
+  color:var(--tekst);
+  background:#fff;
+  border:1px solid var(--n-100);
+  border-radius:14px;
+  padding:.9rem 1rem;
+  outline:none;
+}
+
+.reactie-formulier textarea{
+  min-height:180px;
+  resize:vertical;
+}
+
+.reactie-formulier input:focus,
+.reactie-formulier textarea:focus{
+  border-color:var(--merk-500);
+  box-shadow:0 0 0 3px rgba(0,88,194,.12);
+}
+
+.reactie-formulier .knop-cta{
+  margin-top:var(--s2);
+  width:fit-content;
+}
+
+
+/* 12) TABLET ≥ 660px */
 
 @media (min-width: 660px){
   .pagina-container{
@@ -739,22 +857,20 @@ ul{
   #ad-dag,
   #faq,
   #over-ons,
-  #contact{
-    padding:var(--s6);
-  }
-
-  .reacties-sectie,
-  .reactie-formulier-sectie{
+  #contact,
+  .reactie-formulier-sectie,
+  .reacties-sectie{
     padding:var(--s6);
   }
 }
 
 
-/* 12) DESKTOP ≥ 1024px */
+/* 13) DESKTOP ≥ 1024px */
 
 @media (min-width: 1024px){
   .logo-link img{
     width:240px;
+    max-height:56px;
   }
 
   .hoofd-navigatie{
@@ -827,10 +943,25 @@ ul{
   .site-footer{
     grid-template-columns:repeat(3, 1fr);
   }
+
+  .reacties-layout{
+    grid-template-columns:minmax(0, 1fr) 420px;
+    align-items:start;
+  }
+
+  .reacties-sectie{
+    order:1;
+  }
+
+  .reactie-formulier-sectie{
+    order:2;
+    position:sticky;
+    top:160px;
+  }
 }
 
 
-/* 13) GROOT SCHERM ≥ 1024px */
+/* 14) GROOT SCHERM ≥ 1024px */
 
 @media (min-width: 1024px){
   .nieuws-grid{
@@ -843,82 +974,31 @@ ul{
 }
 
 
-/* 14) REACTIES + FORMULIER */
+/* 15) KLEINE SCHERMEN */
 
-.reacties-sectie,
-.reactie-formulier-sectie{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
-  padding:var(--s5);
-}
+@media (max-width: 320px){
+  .pagina-container{
+    width:min(100% - 1.5rem, var(--container));
+  }
 
-.reacties-sectie h2,
-.reactie-formulier-sectie h2{
-  margin-bottom:var(--s5);
-}
+  .snelle-links-lijst{
+    justify-content:flex-end;
+    gap:.5rem 1rem;
+  }
 
-.reacties-lijst{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:var(--s4);
-}
+  .reactie-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.35rem;
+  }
 
-.reactie-kaart{
-  background:var(--surface-2);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:var(--s4);
-  max-width:700px;
-}
+  .reactie-datum{
+    text-align:left;
+    white-space:normal;
+  }
 
-.reactie-kaart p{
-  margin:0;
-  color:var(--tekst-zacht);
-}
-
-.reactie-kaart p + p{
-  margin-top:var(--s3);
-}
-
-.reactie-formulier{
-  display:grid;
-  gap:var(--s3);
-  max-width:720px;
-}
-
-.reactie-formulier label{
-  font-weight:600;
-  color:var(--tekst);
-}
-
-.reactie-formulier input,
-.reactie-formulier textarea{
-  width:100%;
-  font:inherit;
-  color:var(--tekst);
-  background:#fff;
-  border:1px solid var(--n-100);
-  border-radius:14px;
-  padding:.9rem 1rem;
-  outline:none;
-}
-
-.reactie-formulier textarea{
-  min-height:180px;
-  resize:vertical;
-}
-
-.reactie-formulier input:focus,
-.reactie-formulier textarea:focus{
-  border-color:var(--merk-500);
-  box-shadow:0 0 0 3px rgba(0,88,194,.12);
-}
-
-.reactie-formulier .knop-cta{
-  margin-top:var(--s2);
-  width:fit-content;
+  .knop-cta{
+    min-height:56px;
+    padding:0 1.2rem;
+  }
 }
