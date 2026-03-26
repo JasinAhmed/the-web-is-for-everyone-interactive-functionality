@@ -9,7 +9,7 @@
     </ul>
   </nav>
 
-  <section class="hoofd-navigatie-balk">
+  <div class="hoofd-navigatie-balk">
     <nav class="hoofd-navigatie pagina-container">
       <a href="/" class="logo-link">
         <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
@@ -30,7 +30,7 @@
 
       <a href="/#ad-dag" class="knop-cta desktop-cta">Kom naar Ad-dag</a>
     </nav>
-  </section>
+  </div>
 </header>
 
 <main class="pagina-container" id="inhoud">
@@ -90,38 +90,66 @@
     </section>
   </article>
 
-  <section class="reacties-sectie">
-    <h2>Reacties</h2>
+  <section class="reacties-layout" aria-label="Reacties en reactieformulier">
+    <section class="reactie-formulier-sectie" aria-labelledby="reactie-formulier-titel">
+      <h2 id="reactie-formulier-titel">Laat een reactie achter!</h2>
 
-    {% if reacties and reacties.length > 0 %}
-      <ul class="reacties-lijst">
-        {% for reactie in reacties %}
-          <li class="reactie-kaart">
-            <p>{{ reactie.comment }}</p>
-            <p><strong>Geplaatst door:</strong> {{ reactie.name }}</p>
-            {% if reactie.date_created %}
-              <p>{{ reactie.date_created | date: "%d-%m-%Y" }}</p>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>Er zijn nog geen reacties geplaatst.</p>
-    {% endif %}
-  </section>
+      <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier">
+        <label for="naam">Naam:</label>
+        <input type="text" id="naam" name="naam" required>
 
-  <section class="reactie-formulier-sectie">
-    <h2>Laat een reactie achter!</h2>
+        <label for="bericht">Bericht:</label>
+        <textarea id="bericht" name="bericht" rows="6" required></textarea>
 
-    <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier">
-      <label for="naam">Naam:</label>
-      <input type="text" id="naam" name="naam" required>
+        <button type="submit" class="knop-cta">Verstuur</button>
+      </form>
+    </section>
 
-      <label for="bericht">Bericht:</label>
-      <textarea id="bericht" name="bericht" rows="6" required></textarea>
+    <section class="reacties-sectie" aria-labelledby="reacties-titel">
+      <h2 id="reacties-titel">
+        {% assign aantal = reacties | size %}
+        {% if aantal == 0 %}
+          Wees de eerste die reageert!
+        {% elsif aantal == 1 %}
+          1 reactie
+        {% else %}
+          {{ aantal }} reacties
+        {% endif %}
+      </h2>
 
-      <button type="submit" class="knop-cta">Verstuur</button>
-    </form>
+      {% if reacties and reacties.length > 0 %}
+        {% assign gesorteerde_reacties = reacties | sort: "date_created" | reverse %}
+        <ul class="reacties-lijst">
+          {% for reactie in gesorteerde_reacties %}
+            <li class="reactie-kaart">
+              <article class="reactie-inhoud">
+                <header class="reactie-header">
+                  <p class="reactie-naam">
+                    {% if reactie.name == blank or reactie.name == "test" %}
+                      Onbekend
+                    {% else %}
+                      {{ reactie.name }}
+                    {% endif %}
+                  </p>
+
+                  {% if reactie.date_created %}
+                    <p class="reactie-datum">
+                      <time datetime="{{ reactie.date_created }}">
+                        {{ reactie.date_created | date: "%d-%m-%Y" }}
+                      </time>
+                    </p>
+                  {% endif %}
+                </header>
+
+                <p class="reactie-bericht">{{ reactie.comment }}</p>
+              </article>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Er zijn nog geen reacties geplaatst.</p>
+      {% endif %}
+    </section>
   </section>
 
   <footer class="site-footer" id="contact">
