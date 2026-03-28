@@ -120,7 +120,7 @@ app.post('/genomineerden/:id', async function (request, response) {
   const bericht = request.body.bericht
   const nominee_id = request.params.id
 
-  await fetch('https://fdnd-agency.directus.app/items/adconnect_nominations_comments', {
+  const fetchResponse = await fetch('https://fdnd-agency.directus.app/items/adconnect_nominations_comments', {
     method: 'POST',
     body: JSON.stringify({
       name: naam,
@@ -136,12 +136,12 @@ app.post('/genomineerden/:id', async function (request, response) {
   // console.log(fetchResponse)
 
   // Eventueel kun je de JSON van die response nog debuggen
-  // const fetchResponseJSON = await fetchResponse.json()
+  const fetchResponseJSON = await fetchResponse.json()
   // console.log(fetchResponseJSON)
 
   // Redirect de gebruiker daarna naar een logische volgende stap
   // Zie https://expressjs.com/en/5x/api.html#res.redirect over response.redirect()
-  response.redirect(303, `/genomineerden/${nominee_id}`)
+  response.redirect(303, `/genomineerden/${nominee_id}#reactie-${fetchResponseJSON.data.id}`)
 })
 
 
