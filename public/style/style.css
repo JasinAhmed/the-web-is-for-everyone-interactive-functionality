@@ -1002,3 +1002,10 @@ ul{
     padding:0 1.2rem;
   }
 }
+
+:target {
+  background-color: yellow;
+}
+.reactie-kaart {
+  scroll-margin-top: 10rem;
+}
