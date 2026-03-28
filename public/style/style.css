@@ -1,64 +1,6 @@
-/* STIJLGUIDE — Overlegplatform Ad's */
-
-/* 1) DESIGN TOKENS */
-
-:root{
-  /* KLEUREN (merk) */
-  --merk-900:#000C1A;
-  --merk-800:#0B1220;
-  --merk-700:#002A5C;
-  --merk-500:#0058C2;
-  --merk-400:#006FF5;
-  --merk-100:#C2DDFF;
-
-  /* ACCENT */
-  --accent-600:#CD3618;
-  --accent-500:#E75234;
-
-  /* NEUTRALS */
-  --n-900:#13171D;
-  --n-500:#435264;
-  --n-100:#D2D5D9;
-  --n-050:#FAFAFA;
-  --wit:#FFFFFF;
-
-  /* THEMA LIGHT */
-  --bg:#EAF3FF;
-  --tekst:var(--n-900);
-  --tekst-zacht:var(--n-500);
-  --nav-tekst:#003B82;
-
-  /* SURFACES */
-  --surface:#FFFFFF;
-  --surface-2:#F4F7FB;
-  --border:rgba(19,23,29,.10);
-
-  /* TYPO */
-  --font:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --line:1.6;
-
-  /* RADIUS */
-  --r:18px;
-  --r-afb:26px;
-
-  /* SHADOW */
-  --shadow:0 10px 22px rgba(0,0,0,.08);
-
-  /* SPACING */
-  --s2:.5rem;
-  --s3:.75rem;
-  --s4:1rem;
-  --s5:1.5rem;
-  --s6:2rem;
-  --s7:3rem;
-  --s8:4rem;
-
-  /* LAYOUT */
-  --container:1720px;
-}
 
 
-/* 2) BASE */
+/* 1) BASE */
 
 *{
   box-sizing:border-box;
@@ -133,7 +75,7 @@ ul{
 }
 
 
-/* 3) LAYOUT / CONTAINER */
+/* 2) LAYOUT / CONTAINER */
 
 .pagina-container{
   width:min(100% - 4rem, var(--container));
@@ -141,7 +83,7 @@ ul{
 }
 
 
-/* 4) HEADER */
+/* 3) HEADER */
 
 .site-header{
   position:sticky;
@@ -339,7 +281,7 @@ ul{
 }
 
 
-/* 5) INTRO / GENERIEKE SECTIES */
+/* 4) INTRO / GENERIEKE SECTIES */
 
 .pagina-intro{
   margin-top:var(--s5);
@@ -409,7 +351,7 @@ ul{
 }
 
 
-/* 6) HERO */
+/* 5) HERO */
 
 .hero-sectie{
   display:grid;
@@ -481,7 +423,7 @@ ul{
 }
 
 
-/* 7) NIEUWS */
+/* 6) NIEUWS */
 
 .nieuws-sectie{
   margin-top:var(--s7);
@@ -568,7 +510,7 @@ ul{
 }
 
 
-/* 8) GENOMINEERDEN OVERZICHT */
+/* 7) GENOMINEERDEN OVERZICHT */
 
 .genomineerden-grid{
   list-style:none;
@@ -646,7 +588,7 @@ ul{
 }
 
 
-/* 9) GENOMINEERDE DETAIL */
+/* 8) GENOMINEERDE DETAIL */
 
 .genomineerde-detail{
   margin-top:var(--s6);
@@ -689,7 +631,7 @@ ul{
 }
 
 
-/* 10) FOOTER */
+/* 9) FOOTER */
 
 .site-footer{
   display:grid;
@@ -714,7 +656,7 @@ ul{
 }
 
 
-/* 11) REACTIES + FORMULIER */
+/* 10) REACTIES + FORMULIER */
 
 .reacties-layout{
   display:grid;
@@ -833,7 +775,7 @@ ul{
 }
 
 
-/* 12) TABLET ≥ 660px */
+/* 11) TABLET ≥ 660px */
 
 @media (min-width: 660px){
   .pagina-container{
@@ -865,7 +807,7 @@ ul{
 }
 
 
-/* 13) DESKTOP ≥ 1024px */
+/* 12) DESKTOP ≥ 1024px */
 
 @media (min-width: 1024px){
   .logo-link img{
@@ -961,7 +903,7 @@ ul{
 }
 
 
-/* 14) GROOT SCHERM ≥ 1024px */
+/* 13) GROOT SCHERM ≥ 1024px */
 
 @media (min-width: 1024px){
   .nieuws-grid{
@@ -974,7 +916,7 @@ ul{
 }
 
 
-/* 15) KLEINE SCHERMEN */
+/* 14) KLEINE SCHERMEN */
 
 @media (max-width: 320px){
   .pagina-container{
