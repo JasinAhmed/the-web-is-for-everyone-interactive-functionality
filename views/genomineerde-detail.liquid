@@ -91,8 +91,10 @@
   </article>
 
   <section class="reacties-layout" aria-label="Reacties en reactieformulier">
-    <section class="reactie-formulier-sectie" aria-labelledby="reactie-formulier-titel">
-      <h2 id="reactie-formulier-titel">Laat een reactie achter!</h2>
+
+    <!-- FORMULIER -->
+    <section class="reactie-formulier-sectie">
+      <h2>Laat een reactie achter!</h2>
 
       <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier">
         <label for="naam">Naam:</label>
@@ -105,8 +107,9 @@
       </form>
     </section>
 
-    <section class="reacties-sectie" aria-labelledby="reacties-titel">
-      <h2 id="reacties-titel">
+    <!-- REACTIES -->
+    <section class="reacties-sectie">
+      <h2>
         {% assign aantal = reacties | size %}
         {% if aantal == 0 %}
           Wees de eerste die reageert!
@@ -119,11 +122,16 @@
 
       {% if reacties and reacties.length > 0 %}
         {% assign gesorteerde_reacties = reacties | sort: "date_created" | reverse %}
+
         <ul class="reacties-lijst">
           {% for reactie in gesorteerde_reacties %}
-            <li class="reactie-kaart">
+
+            <!-- 🔥 HIER ZIT DE BELANGRIJKE FIX -->
+            <li class="reactie-kaart" id="reactie-{{ reactie.id }}">
+
               <article class="reactie-inhoud">
                 <header class="reactie-header">
+
                   <p class="reactie-naam">
                     {% if reactie.name == blank or reactie.name == "test" %}
                       Onbekend
@@ -139,20 +147,24 @@
                       </time>
                     </p>
                   {% endif %}
+
                 </header>
 
                 <p class="reactie-bericht">{{ reactie.comment }}</p>
               </article>
+
             </li>
           {% endfor %}
         </ul>
+
       {% else %}
         <p>Er zijn nog geen reacties geplaatst.</p>
       {% endif %}
     </section>
+
   </section>
 
-  <footer class="site-footer" id="contact">
+  <footer class="site-footer">
     <section class="footer-blok">
       <h2>Overlegplatform Ad's</h2>
       <p>
