@@ -145,6 +145,35 @@ app.post('/genomineerden/:id', async function (request, response) {
 })
 
 
+// ROUTE: REACTIE VERWIJDEREN
+// Deze route gebruik ik om een reactie weg te halen
+app.post('/reacties/:reactieId/verwijderen', async function (request, response) {
+
+  // Ik haal hier het id van de reactie uit de URL
+  const reactieId = request.params.reactieId
+
+  // Ik haal hier het id van de genomineerde uit het formulier
+  // Dit heb ik nodig zodat ik daarna terug kan sturen naar de juiste pagina
+  const nomineeId = request.body.nomineeId
+
+  // Met deze fetch stuur ik een DELETE request naar Directus
+  // Zo probeer ik precies die ene reactie te verwijderen
+  const deleteResponse = await fetch(`https://fdnd-agency.directus.app/items/adconnect_nominations_comments/${reactieId}`, {
+    method: 'DELETE'
+  })
+
+  // Ik check even of het verwijderen gelukt is
+  // Als het niet lukt, laat ik een simpele foutmelding zien
+  if (!deleteResponse.ok) {
+    response.status(500).send('Het verwijderen van de reactie is niet gelukt')
+    return
+  }
+
+  // Als het wel gelukt is, stuur ik de gebruiker terug naar de detailpagina
+  response.redirect(303, `/genomineerden/${nomineeId}`)
+})
+
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
