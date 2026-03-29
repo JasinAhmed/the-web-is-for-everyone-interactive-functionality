@@ -95,12 +95,18 @@
     <section class="reactie-formulier-sectie">
       <h2>Laat een reactie achter!</h2>
 
-      <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier">
+      {% comment %}
+        Ik zet novalidate op het formulier, zodat ik mijn eigen error state kan laten zien
+        in plaats van de standaard browser melding.
+      {% endcomment %}
+      <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier" novalidate>
         <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" required>
+        <input type="text" id="naam" name="naam">
+        <small class="foutmelding" id="naam-fout">Vul je naam in.</small>
 
         <label for="bericht">Bericht:</label>
-        <textarea id="bericht" name="bericht" rows="6" required></textarea>
+        <textarea id="bericht" name="bericht" rows="6"></textarea>
+        <small class="foutmelding" id="bericht-fout">Vul eerst een bericht in.</small>
 
         <button type="submit" class="knop-cta">Verstuur</button>
       </form>
