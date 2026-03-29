@@ -979,3 +979,37 @@ ul{
 .verwijder-knop:active {
   transform: scale(0.95);
 }
+
+/* Ik geef de foutmelding standaard niet weer */
+.foutmelding {
+  display: none;
+  margin-top: -0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #b42318;
+}
+
+/* Ik laat de foutmelding zien zodra JavaScript de class toevoegt */
+.foutmelding.zichtbaar {
+  display: block;
+}
+
+/* Ik zet een icoon voor de foutmelding zodat de fout extra duidelijk is */
+.foutmelding.zichtbaar::before {
+  content: "⚠ ";
+}
+
+/* Ik geef input en textarea een error state als ze leeg zijn bij submit */
+.reactie-formulier input.heeft-fout,
+.reactie-formulier textarea.heeft-fout {
+  border: 2px solid #d92d20;
+  background-color: #fef3f2;
+}
+
+/* Ik zorg dat de focus state ook rood blijft als het veld nog fout is */
+.reactie-formulier input.heeft-fout:focus,
+.reactie-formulier textarea.heeft-fout:focus {
+  border-color: #d92d20;
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.15);
+}
