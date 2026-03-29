@@ -15,7 +15,7 @@
         <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
       </a>
 
-      <button class="hamburger" id="hamburger">☰</button>
+      <button class="hamburger" id="hamburger" type="button">☰</button>
 
       <ul class="hoofd-menu" id="hoofd-menu">
         <li><a class="menu-link" href="/">Home</a></li>
@@ -77,22 +77,21 @@
       {% if nominee.excerpt %}
         <section>
           <h2>Korte introductie</h2>
-          {{ nominee.excerpt }}
+          <div>{{ nominee.excerpt }}</div>
         </section>
       {% endif %}
 
       {% if nominee.body %}
         <section>
           <h2>Meer over deze genomineerde</h2>
-          {{ nominee.body }}
+          <div>{{ nominee.body }}</div>
         </section>
       {% endif %}
     </section>
   </article>
 
-  <section class="reacties-layout" aria-label="Reacties en reactieformulier">
+  <section class="reacties-layout">
 
-    <!-- FORMULIER -->
     <section class="reactie-formulier-sectie">
       <h2>Laat een reactie achter!</h2>
 
@@ -107,7 +106,6 @@
       </form>
     </section>
 
-    <!-- REACTIES -->
     <section class="reacties-sectie">
       <h2>
         {% assign aantal = reacties | size %}
@@ -125,13 +123,9 @@
 
         <ul class="reacties-lijst">
           {% for reactie in gesorteerde_reacties %}
-
-            <!-- 🔥 HIER ZIT DE BELANGRIJKE FIX -->
             <li class="reactie-kaart" id="reactie-{{ reactie.id }}">
-
               <article class="reactie-inhoud">
                 <header class="reactie-header">
-
                   <p class="reactie-naam">
                     {% if reactie.name == blank or reactie.name == "test" %}
                       Onbekend
@@ -147,16 +141,18 @@
                       </time>
                     </p>
                   {% endif %}
-
                 </header>
 
                 <p class="reactie-bericht">{{ reactie.comment }}</p>
-              </article>
 
+                <form action="/reacties/{{ reactie.id }}/verwijderen" method="POST" class="reactie-verwijder-formulier">
+                  <input type="hidden" name="nomineeId" value="{{ nominee.id }}">
+                  <button type="submit" class="verwijder-knop">Verwijderen</button>
+                </form>
+              </article>
             </li>
           {% endfor %}
         </ul>
-
       {% else %}
         <p>Er zijn nog geen reacties geplaatst.</p>
       {% endif %}
