@@ -951,3 +951,31 @@ ul{
 .reactie-kaart {
   scroll-margin-top: 10rem;
 }
+/* Ik geef het formulier wat ruimte zodat het niet tegen de tekst zit */
+.reactie-verwijder-formulier {
+  margin-top: 0.75rem;
+}
+
+/* Basis stijl van de knop */
+.verwijder-knop {
+  background-color: #f8d7da; /* licht rood */
+  color: #842029; /* donker rood */
+  border: 1px solid #f5c2c7;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect (als je erover gaat) */
+.verwijder-knop:hover {
+  background-color: #dc3545; /* rood */
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Kleine click feedback */
+.verwijder-knop:active {
+  transform: scale(0.95);
+}
