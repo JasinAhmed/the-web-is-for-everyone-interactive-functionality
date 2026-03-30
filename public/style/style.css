@@ -5,7 +5,7 @@
 }
 
 html{
-  scroll-behavior:smooth;
+  scroll-behavior:auto;
 }
 
 body{
@@ -131,7 +131,6 @@ ul{
     font-size:1rem;
     color:var(--n-900);
     white-space:nowrap;
-    transition:opacity .15s ease;
 
     @media (any-pointer: fine){
       &:hover{
@@ -199,7 +198,6 @@ ul{
   border-radius:12px;
   cursor:pointer;
   flex-shrink:0;
-  transition:background .15s ease;
 
   @media (any-pointer: fine){
     &:hover{
@@ -335,7 +333,6 @@ ul{
   font-weight:700;
   font-size:1rem;
   white-space:nowrap;
-  transition:background .2s ease, transform .2s ease;
   cursor:pointer;
 
   @media (any-pointer: fine){
@@ -503,7 +500,6 @@ ul{
   color:var(--merk-700);
   padding:.9rem 1.2rem;
   border-radius:16px;
-  transition:background .2s ease, transform .2s ease;
 
   @media (any-pointer: fine){
     &:hover{
@@ -521,7 +517,6 @@ ul{
   border:1.5px solid #fff;
   padding:.9rem 1.4rem;
   border-radius:15px;
-  transition:background .2s ease, transform .2s ease;
 
   @media (any-pointer: fine){
     &:hover{
@@ -671,11 +666,6 @@ ul{
   border-radius:24px;
   overflow:hidden;
   padding:var(--s5);
-  transition:
-    transform .28s ease,
-    box-shadow .28s ease,
-    border-color .28s ease,
-    background .28s ease;
 
   @media (any-pointer: fine){
     &:hover{
@@ -700,7 +690,6 @@ ul{
       height:220px;
       object-fit:cover;
       border-radius:18px;
-      transition:transform .45s ease;
     }
   }
 }
@@ -881,10 +870,6 @@ ul{
   border-radius:18px;
   padding:var(--s4);
   scroll-margin-top:10rem;
-
-  &:target{
-    animation:reactie-highlight-fade 3.5s ease-out 1;
-  }
 }
 
 @keyframes reactie-highlight-fade{
@@ -1008,7 +993,6 @@ ul{
   font-size:0.85rem;
   border-radius:6px;
   cursor:pointer;
-  transition:all 0.2s ease;
 
   @media (any-pointer: fine){
     &:hover{
@@ -1037,5 +1021,74 @@ ul{
     &::before{
       content:"⚠ ";
     }
+  }
+}
+
+
+/* 11) MOTION ALLEEN ALS IEMAND GEEN REDUCED MOTION HEEFT */
+
+@media (prefers-reduced-motion: no-preference){
+  html{
+    scroll-behavior:smooth;
+  }
+
+  .snelle-links-lijst a{
+    transition:opacity .15s ease;
+  }
+
+  .hamburger{
+    transition:background .15s ease;
+  }
+
+  .menu-link{
+    transition:color .15s ease;
+  }
+
+  .knop-cta{
+    transition:background .2s ease, transform .2s ease;
+  }
+
+  .knop-outline{
+    transition:background .2s ease, transform .2s ease;
+  }
+
+  .knop-blauw{
+    transition:background .2s ease, transform .2s ease;
+  }
+
+  .genomineerde-kaart{
+    transition:
+      transform .28s ease,
+      box-shadow .28s ease,
+      border-color .28s ease,
+      background .28s ease;
+  }
+
+  .genomineerde-kaart .kaart-afbeelding img{
+    transition:transform .45s ease;
+  }
+
+  .verwijder-knop{
+    transition:all 0.2s ease;
+  }
+
+  .reactie-kaart:target{
+    animation:reactie-highlight-fade 3.5s ease-out 1;
+  }
+}
+
+
+/* 12) EXTRA VEILIGHEID VOOR REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+    transition:none !important;
   }
 }
