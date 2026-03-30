@@ -1,5 +1,9 @@
 {% render 'partials/head.liquid', title: 'Home' %}
 
+<script>
+  document.documentElement.classList.add('js');
+</script>
+
 <header class="site-header">
 
   <nav class="snelle-links-nav">
@@ -16,7 +20,7 @@
         <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
       </a>
 
-      <button class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" type="button">
         ☰
       </button>
 
