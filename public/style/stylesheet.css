@@ -52,3 +52,19 @@
   /* LAYOUT */
   --container:1720px;
 }
+
+/* kleine dark mode (alleen overrides) */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000C1A;
+    --tekst:#FAFAFA;
+    --tekst-zacht:#A1AEBD;
+    --nav-tekst:#8FC1FF;
+
+    --surface:#001F44;
+    --surface-2:#002A5C;
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 10px 22px rgba(0,0,0,.40);
+  }
+}
