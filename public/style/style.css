@@ -76,7 +76,6 @@ ul{
 
 :target{
   scroll-margin-top:6rem;
-  outline:3px solid rgba(255, 230, 0, 0.5);
 }
 
 
@@ -882,6 +881,27 @@ ul{
   border-radius:18px;
   padding:var(--s4);
   scroll-margin-top:10rem;
+
+  &:target{
+    animation:reactie-highlight-fade 3.5s ease-out 1;
+  }
+}
+
+@keyframes reactie-highlight-fade{
+  0%{
+    background-color:#fff59d;
+    box-shadow:0 0 0 3px rgba(255, 230, 0, 0.55);
+  }
+
+  70%{
+    background-color:#fff9c4;
+    box-shadow:0 0 0 2px rgba(255, 230, 0, 0.2);
+  }
+
+  100%{
+    background-color:var(--surface-2);
+    box-shadow:none;
+  }
 }
 
 .reactie-inhoud{
