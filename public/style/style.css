@@ -1092,3 +1092,132 @@ ul{
     transition:none !important;
   }
 }
+.lado-sectie {
+  padding: 3rem 0;
+}
+
+.lado-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.lado-grid-item {
+  margin: 0;
+  padding: 0;
+}
+
+.lado-kaart {
+  width: 100%;
+  min-height: 210px;
+  border: 2px solid #cfcfcf;
+  border-radius: 14px;
+  background: #f5f5f5;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.lado-kaart:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.lado-summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding: 1.75rem 4.5rem 1.5rem 1.75rem;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lado-summary::-webkit-details-marker {
+  display: none;
+}
+
+.lado-summary h3 {
+  margin: 0;
+  max-width: 32rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #111827;
+}
+
+.lado-leesmeer {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.plus {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 18px;
+  height: 18px;
+}
+
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  background: #ef4444;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.plus::before {
+  width: 18px;
+  height: 2px;
+  left: 0;
+  top: 8px;
+}
+
+.plus::after {
+  width: 2px;
+  height: 18px;
+  top: 0;
+  left: 8px;
+}
+
+.lado-kaart:hover .plus::before,
+.lado-kaart:hover .plus::after {
+  background: #0b63ce;
+}
+
+.lado-kaart[open] .plus::after {
+  transform: scaleY(0);
+}
+
+.lado-detail-inhoud {
+  padding: 0 1.75rem 1.75rem;
+}
+
+.lado-detail-inhoud p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .lado-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lado-kaart,
+  .lado-summary {
+    min-height: auto;
+  }
+
+  .lado-summary {
+    padding-right: 4rem;
+  }
+}
