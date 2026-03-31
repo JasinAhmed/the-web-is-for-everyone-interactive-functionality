@@ -48,6 +48,14 @@ app.get('/', async function (request, response) {
 })
 
 
+// ROUTE: LAdO PAGINA
+// Ik gebruik deze route om mijn LAdO pagina te tonen
+// Hier render ik simpelweg lado.liquid zonder extra data op te halen
+app.get('/lado', async function (request, response) {
+  response.render('lado.liquid')
+})
+
+
 // ROUTE: GENOMINEERDE STUDENTEN PAGINA
 // Deze route toont een overzicht van alle genomineerde studenten
 app.get('/genomineerden', async function (request, response) {
