@@ -1221,3 +1221,88 @@ ul{
     padding-right: 4rem;
   }
 }
+.lado-overzicht {
+  width: 100%;
+}
+
+.lado-uitleg {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.lado-kolommen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.lado-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lado-accordion {
+  border: 1px solid #dbe3ea;
+  border-radius: 1rem;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.lado-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 3.2rem 1.1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #102033;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.lado-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.lado-accordion summary:hover {
+  background: #f7fafc;
+}
+
+.lado-accordion summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1d4ed8;
+}
+
+.lado-accordion[open] summary::after {
+  content: "–";
+}
+
+.lado-accordion p {
+  margin: 0;
+  padding: 0 1.25rem 1rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.lado-accordion p:first-of-type {
+  padding-top: 0.25rem;
+}
+
+.lado-accordion p:last-of-type {
+  padding-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .lado-kolommen {
+    grid-template-columns: 1fr;
+  }
+}
