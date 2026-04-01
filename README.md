@@ -1,36 +1,149 @@
-# Interactive Functionality
-
-Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is
-
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web-is-for-everyone-interactive-functionality/blob/main/docs/INSTRUCTIONS.md)
-
-
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+# Interactive Functionality – AD Connect Talent Award
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual of video toe 📸 -->
-<!-- Voeg een link toe naar GitHub Pages 🌐-->
+Voor deze opdracht heb ik een interactieve en toegankelijke webapplicatie ontwikkeld voor AD Connect, gericht op de Talent Award pagina.
+
+Het doel van deze applicatie is om bezoekers niet alleen genomineerden te laten bekijken, maar ook actief te laten deelnemen door reacties (posts) te plaatsen.
+
+De applicatie is gebouwd met server-side rendering via `server.js`, waardoor de website ook goed werkt zonder JavaScript.
+
+Live demo:  
+https://the-web-is-for-everyone-interactive-zio9.onrender.com/
+
+---
+
+## Opdracht
+Ontwerp en ontwikkel een interactieve toepassing die:
+- Toegankelijk is voor iedereen  
+- Werkt op verschillende apparaten  
+- Progressive enhancement toepast  
+- Interactie mogelijk maakt voor de gebruiker  
+
+---
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
+De gebruiker kan:
+
+- Genomineerden bekijken  
+- Doorklikken naar een detailpagina  
+- Een post/reactie plaatsen  
+- Een post verwijderen  
+- Navigeren via een hamburger menu  
+
+### User story
+Als gebruiker wil ik een reactie kunnen plaatsen bij een genomineerde, zodat ik mijn mening of support kan delen.
+
+---
+
+## Functionaliteiten
+
+- Overzicht van genomineerden  
+- Detailpagina per genomineerde  
+- Post systeem (create)  
+- Delete functie (remove posts)  
+- Hamburger menu (mobile navigation)  
+- Responsive design  
+- Light mode en gedeeltelijke dark mode  
+- Loading/UX verbeteringen  
+
+---
+
+## Technische keuzes
+
+Tijdens dit project heb ik bewust gekozen voor:
+
+### Server-side rendering
+- Gebouwd met Node.js (`server.js`)
+- Pagina’s worden dynamisch gegenereerd
+- Werkt zonder afhankelijk te zijn van JavaScript
+
+### Form-based interactie
+- Posts worden verstuurd via HTML formulieren (POST requests)
+- Werkt ook zonder JavaScript
+
+### Delete functionaliteit
+- Gebruikers kunnen posts verwijderen
+- Houdt de pagina overzichtelijk
+
+### Hamburger menu
+- Voor betere gebruikerservaring op mobiel
+- Werkt als enhancement met JavaScript
+
+---
+
+## Toegankelijkheid
+
+Toegankelijkheid stond centraal in deze opdracht.
+
+Ik heb daarom:
+
+- Semantische HTML gebruikt  
+- Formulieren gebouwd die werken zonder JavaScript  
+- Progressive enhancement toegepast  
+- Responsive design gebruikt  
+
+De basisfunctionaliteit (zoals posts plaatsen) werkt zonder JavaScript.  
+JavaScript voegt alleen extra interactie toe.
+
+---
+
+## Progressive Enhancement
+
+De website is opgebouwd volgens het principe van progressive enhancement:
+
+1. Basis (HTML + server)
+   - Content zichtbaar
+   - Posts werken via formulieren  
+
+2. Verbetering (CSS)
+   - Layout en design  
+
+3. Enhancement (JavaScript)
+   - Hamburger menu  
+   - Extra interactie  
+
+---
+
+## Gebruikte technieken
+
+### Frontend
+- HTML (semantisch en toegankelijk)
+- CSS (responsive en styling)
+- JavaScript (interactie)
+
+### Backend
+- Node.js
+- Server-side rendering (`server.js`)
+
+### Functionaliteit
+- POST requests (form handling)
+- Basis CRUD:
+  - Create → posts toevoegen  
+  - Delete → posts verwijderen  
+
+---
+
+## Problemen en oplossingen
+
+Tijdens het project liep ik tegen meerdere uitdagingen aan:
+
+- Posts werden niet goed weergegeven  
+  → Opgelost door server-side rendering correct te implementeren  
+
+- Te veel reacties op de pagina  
+  → Opgelost met een delete functie  
+
+- Navigatie werkte niet goed op mobiel  
+  → Opgelost met een hamburger menu  
+
+- Dark mode nog niet volledig  
+  → Dit ben ik nog aan het verbeteren  
+
+---
 
 ## Installatie
-<!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
 
-
-## Bronnen
-
-## Licentie
-
-This project is licensed under the terms of the [MIT license](./LICENSE).
+1. Clone de repository:
+```bash
+git clone <jouw-repository-link>
