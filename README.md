@@ -112,7 +112,7 @@ npm install
 npm start
 ```
 
-De website is nu te zien op `http://localhost:3000`.
+De website is nu te zien op `http://localhost:8000`.
 
 ---
 
