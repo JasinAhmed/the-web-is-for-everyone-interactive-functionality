@@ -39,7 +39,7 @@
 
 <main class="pagina-container" id="inhoud">
   <section class="hero-sectie">
-    <section class="hero-tekst">
+    <div class="hero-tekst">
       <h1>Het landelijke platform voor Associate degrees</h1>
       <p>
         Ad-netwerk samen om kennis te delen, samen te werken en de kwaliteit
@@ -50,7 +50,7 @@
         <a class="knop-outline" href="#uitleg">Meer over Ad's</a>
         <a class="knop-blauw" href="#ad-dag">Kom naar de Ad-dag</a>
       </p>
-    </section>
+    </div>
 
     <figure class="hero-afbeelding">
       <img
@@ -81,7 +81,7 @@
                   {% if item.image %}
                     <img
                       src="https://fdnd-agency.directus.app/assets/{{ item.image }}"
-                      alt="nieuws{{ item.title }}"
+                      alt="Afbeelding bij nieuwsbericht: {{ item.title }}"
                       width="360"
                       height="240">
                   {% else %}
@@ -93,7 +93,7 @@
                   {% endif %}
                 </figure>
 
-                <section class="nieuws-inhoud">
+                <div class="nieuws-inhoud">
                   {% if item.date %}
                     <p class="nieuws-meta">{{ item.date | date: "%-d %B %Y" }}</p>
                   {% endif %}
@@ -107,11 +107,17 @@
                   {% endif %}
 
                   <p>
-                    <a class="tekst-link" href="#">
-                      Lees meer over {{ item.title }}
-                    </a>
+                    {% if item.slug and item.slug != blank %}
+                      <a class="tekst-link" href="/nieuws/{{ item.slug }}">
+                        Lees meer over {{ item.title }}
+                      </a>
+                    {% else %}
+                      <a class="tekst-link" href="/nieuws">
+                        Lees meer over {{ item.title }}
+                      </a>
+                    {% endif %}
                   </p>
-                </section>
+                </div>
               </article>
             </li>
           {% endif %}
