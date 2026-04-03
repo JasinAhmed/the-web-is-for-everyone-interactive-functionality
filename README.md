@@ -48,6 +48,17 @@ Je kunt je reactie ook weer verwijderen. Dit werkt via een formulier, dus ook zo
 https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/e1f0d15a44c2b8f15fbb0ce33c9bc0fc548d5860/server.js#L156-L182
 
 ---
+## Progressive Enhancement
+
+In dit project heb ik gebruik gemaakt van progressive enhancement. Dit betekent dat ik eerst ben begonnen met een basis die voor iedereen werkt.
+
+De basis van mijn website is gemaakt met HTML. Hierdoor is alle content zoals publicaties altijd zichtbaar.
+
+Daarna heb ik CSS toegevoegd om de website er beter uit te laten zien en responsive te maken voor verschillende schermgroottes.
+
+Ik heb ook JavaScript gebruikt in mijn project, vooral voor de server (Node.js en Express) en het verwerken van data. De interactieve functies zoals filters zijn nog niet volledig werkend.
+
+Mijn keuze hiervoor is dat de website altijd blijft werken, ook als JavaScript niet beschikbaar is. De extra functionaliteit wordt later toegevoegd als verbetering.
 
 ## Huisstijl
 
