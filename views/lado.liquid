@@ -1,23 +1,24 @@
-{% render 'partials/head.liquid', title: 'lado' %}
+{% render 'partials/head.liquid', title: 'Lado' %}
+
+<a class="skip-link" href="#inhoud">Ga direct naar de inhoud</a>
 
 <header class="site-header">
-
   <nav class="snelle-links-nav">
     <ul class="snelle-links-lijst pagina-container">
-      <li><a href="#faq">FAQ's</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/#faq">FAQ's</a></li>
+      <li><a href="/#over-ons">Over ons</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="hoofd-navigatie-balk">
+  <div class="hoofd-navigatie-balk">
     <nav class="hoofd-navigatie pagina-container">
       <a href="/" class="logo-link">
         <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
       </a>
 
       <button class="hamburger" id="hamburger" type="button">
-        ☰
+        Menu
       </button>
 
       <ul class="hoofd-menu" id="hoofd-menu">
@@ -33,14 +34,12 @@
 
       <a href="#contact-lado" class="knop-cta desktop-cta">Contact</a>
     </nav>
-  </section>
-
+  </div>
 </header>
 
 <main class="pagina-container" id="inhoud">
-
   <section class="hero-sectie" id="uitleg-lado">
-    <header class="hero-tekst">
+    <section class="hero-tekst">
       <h1>Landelijke Ad-overleggen en Ad-profielen</h1>
       <p>
         Het Overlegplatform Associate degrees onderstreept het belang voor Ad-opleidingen
@@ -53,12 +52,16 @@
       </p>
       <p class="hero-acties">
         <a class="knop-outline" href="#lado-info">Lees meer</a>
-        <a class="knop-blauw" href="#lado-overzicht">Bekijk overzicht →</a>
+        <a class="knop-blauw" href="#lado-overzicht">Bekijk overzicht</a>
       </p>
-    </header>
+    </section>
 
     <figure class="hero-afbeelding">
-      <img src="/style/assets/landelijke-ad-dag.jpg" alt="Landelijke Ad-overleggen en Ad-profielen" width="1100" height="700">
+      <img
+        src="/style/assets/landelijke-ad-dag.jpg"
+        alt="Landelijke Ad-overleggen en Ad-profielen"
+        width="1100"
+        height="700">
     </figure>
   </section>
 
@@ -76,13 +79,13 @@
             <span class="plus"></span>
           </summary>
 
-          <div class="lado-detail-inhoud">
+          <section class="lado-detail-inhoud">
             <p>
               In een LAdO stemmen de aangesloten Ad-opleidingen met elkaar af over een gezamenlijke
               profilering om tot landelijk herkenbare opleidingen te komen. Deze profilering is
               richtinggevend voor (aankomende) studenten, werkgevers en kwaliteitstoetsing door de NVAO.
             </p>
-          </div>
+          </section>
         </details>
       </li>
 
@@ -94,13 +97,13 @@
             <span class="plus"></span>
           </summary>
 
-          <div class="lado-detail-inhoud">
+          <section class="lado-detail-inhoud">
             <p>
               Elke hogeschool heeft met haar eigen regio te maken, maar ook met landelijke
               werkgeversorganisaties, brancheorganisaties en beroepsverenigingen. Binnen een LAdO
               wordt hierover gezamenlijk afgestemd.
             </p>
-          </div>
+          </section>
         </details>
       </li>
 
@@ -112,13 +115,13 @@
             <span class="plus"></span>
           </summary>
 
-          <div class="lado-detail-inhoud">
+          <section class="lado-detail-inhoud">
             <p>
               In de LAdO’s is regelmatig afstemming met de NVAO, het ministerie van OCW en de
               Commissie Doelmatigheid Hoger Onderwijs. Opleidingen kunnen veel van elkaar leren
               als het gaat om accreditaties en onderwijsvernieuwingen.
             </p>
-          </div>
+          </section>
         </details>
       </li>
 
@@ -130,12 +133,12 @@
             <span class="plus"></span>
           </summary>
 
-          <div class="lado-detail-inhoud">
+          <section class="lado-detail-inhoud">
             <p>
               In de ontwikkeling en doorontwikkeling van Ad-opleidingen valt veel van elkaar te leren,
               bijvoorbeeld over niveau, toetsing, praktijkleren en digitaal onderwijsmateriaal.
             </p>
-          </div>
+          </section>
         </details>
       </li>
     </ul>
@@ -324,7 +327,6 @@
       Ad-profiel ontwikkelen? Neem dan contact op met Mariëtte Muris.
     </p>
   </section>
-
 </main>
 
 {% render 'partials/foot.liquid' %}
