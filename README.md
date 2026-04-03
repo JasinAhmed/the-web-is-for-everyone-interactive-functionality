@@ -38,20 +38,14 @@ De belangrijkste functie op de website is het plaatsen van een reactie bij een g
 - Na het plaatsen word je automatisch naar jouw reactie gestuurd
 
 **Code:**
-```
-server.js – regels 114 t/m 153
-https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/29ea30665cfedca1946bddbd897787aa99345e0a/server.js#L114-L153
-```
+https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/e1f0d15a44c2b8f15fbb0ce33c9bc0fc548d5860/server.js#L114-L153
 
 ### Reactie verwijderen
 
 Je kunt je reactie ook weer verwijderen. Dit werkt via een formulier, dus ook zonder JavaScript.
 
 **Code:**
-```
-server.js – regels 156 t/m 171
-https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/29ea30665cfedca1946bddbd897787aa99345e0a/server.js#L156-L171
-```
+https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/e1f0d15a44c2b8f15fbb0ce33c9bc0fc548d5860/server.js#L156-L182
 
 ---
 
