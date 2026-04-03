@@ -1,149 +1,142 @@
-# Interactive Functionality – AD Connect Talent Award
+# AD Connect Talent Award – Website
+
+Een interactieve website voor de Talent Award van AD Connect. Bezoekers kunnen genomineerden bekijken én reacties plaatsen.
+
+🔗 **Live website:** [Bekijk hier](https://the-web-is-for-everyone-interactive-zio9.onrender.com/)  
+📁 **Repository:** [GitHub – JasinAhmed](https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality)
+
+---
+
+## Inhoudsopgave
+
+- [Beschrijving](#beschrijving)
+- [Huisstijl](#huisstijl)
+- [Responsive](#responsive)
+- [Kenmerken](#kenmerken)
+- [Installatie](#installatie)
+- [Bronnen](#bronnen)
+- [Licentie](#licentie)
+
+---
 
 ## Beschrijving
-Voor deze opdracht heb ik een interactieve en toegankelijke webapplicatie ontwikkeld voor AD Connect, gericht op de Talent Award pagina.
 
-Het doel van deze applicatie is om bezoekers niet alleen genomineerden te laten bekijken, maar ook actief te laten deelnemen door reacties (posts) te plaatsen.
+Voor deze opdracht heb ik een interactieve website gemaakt voor de Talent Award pagina van AD Connect. De opdrachtgever wilde dat bezoekers niet alleen konden kijken, maar ook echt iets konden doen op de website.
 
-De applicatie is gebouwd met server-side rendering via `server.js`, waardoor de website ook goed werkt zonder JavaScript.
+De website werkt ook zonder JavaScript, zodat iedereen hem kan gebruiken.
 
-Live demo:  
-https://the-web-is-for-everyone-interactive-zio9.onrender.com/
+Tijdens deze sprint heb ik vooral geleerd hoe je data kunt versturen naar Directus via een formulier.
 
 ---
 
-## Opdracht
-Ontwerp en ontwikkel een interactieve toepassing die:
-- Toegankelijk is voor iedereen  
-- Werkt op verschillende apparaten  
-- Progressive enhancement toepast  
-- Interactie mogelijk maakt voor de gebruiker  
+### Reactie plaatsen
+
+De belangrijkste functie op de website is het plaatsen van een reactie bij een genomineerde.
+
+- Je ziet hoeveel reacties er al zijn voordat je er zelf eentje plaatst
+- Als er nog geen reacties zijn, staat er *"Er zijn nog geen reacties"*
+- Na het plaatsen word je automatisch naar jouw reactie gestuurd
+
+**Code:**
+```
+server.js – regels 114 t/m 153
+https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/29ea30665cfedca1946bddbd897787aa99345e0a/server.js#L114-L153
+```
+
+### Reactie verwijderen
+
+Je kunt je reactie ook weer verwijderen. Dit werkt via een formulier, dus ook zonder JavaScript.
+
+**Code:**
+```
+server.js – regels 156 t/m 171
+https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality/blob/29ea30665cfedca1946bddbd897787aa99345e0a/server.js#L156-L171
+```
 
 ---
 
-## Gebruik
+## Huisstijl
 
-De gebruiker kan:
+De website is gebaseerd op het design van AD Connect.
 
-- Genomineerden bekijken  
-- Doorklikken naar een detailpagina  
-- Een post/reactie plaatsen  
-- Een post verwijderen  
-- Navigeren via een hamburger menu  
-
-### User story
-Als gebruiker wil ik een reactie kunnen plaatsen bij een genomineerde, zodat ik mijn mening of support kan delen.
+- Kleuren die passen bij de huisstijl van de opdrachtgever
+- Duidelijke letters die goed leesbaar zijn
+- Simpel en overzichtelijk, zodat de genomineerden de aandacht krijgen
 
 ---
 
-## Functionaliteiten
+## Responsive
 
-- Overzicht van genomineerden  
-- Detailpagina per genomineerde  
-- Post systeem (create)  
-- Delete functie (remove posts)  
-- Hamburger menu (mobile navigation)  
-- Responsive design  
-- Light mode en gedeeltelijke dark mode  
-- Loading/UX verbeteringen  
+De website is gemaakt voor mobiel eerst, omdat de meeste bezoekers de site op hun telefoon bekijken. Hij werkt ook gewoon op een desktop.
 
 ---
 
-## Technische keuzes
+## Kenmerken
 
-Tijdens dit project heb ik bewust gekozen voor:
+De website is gebouwd met:
 
-### Server-side rendering
-- Gebouwd met Node.js (`server.js`)
-- Pagina’s worden dynamisch gegenereerd
-- Werkt zonder afhankelijk te zijn van JavaScript
+- HTML, CSS en JavaScript
+- Node.js en Express
+- Liquid (voor de pagina's op de server)
+- JSON
+- Directus (voor de data en API)
 
-### Form-based interactie
-- Posts worden verstuurd via HTML formulieren (POST requests)
-- Werkt ook zonder JavaScript
+### Animaties
 
-### Delete functionaliteit
-- Gebruikers kunnen posts verwijderen
-- Houdt de pagina overzichtelijk
+Mensen die geen beweging op hun scherm willen, krijgen geen animaties te zien. Dit doe ik met de volgende CSS:
 
-### Hamburger menu
-- Voor betere gebruikerservaring op mobiel
-- Werkt als enhancement met JavaScript
+```css
+@media (prefers-reduced-motion: no-preference) {
+  .highlight {
+    border: 2px solid black;
+    transition: border 0.5s ease;
+  }
 
----
-
-## Toegankelijkheid
-
-Toegankelijkheid stond centraal in deze opdracht.
-
-Ik heb daarom:
-
-- Semantische HTML gebruikt  
-- Formulieren gebouwd die werken zonder JavaScript  
-- Progressive enhancement toegepast  
-- Responsive design gebruikt  
-
-De basisfunctionaliteit (zoals posts plaatsen) werkt zonder JavaScript.  
-JavaScript voegt alleen extra interactie toe.
-
----
-
-## Progressive Enhancement
-
-De website is opgebouwd volgens het principe van progressive enhancement:
-
-1. Basis (HTML + server)
-   - Content zichtbaar
-   - Posts werken via formulieren  
-
-2. Verbetering (CSS)
-   - Layout en design  
-
-3. Enhancement (JavaScript)
-   - Hamburger menu  
-   - Extra interactie  
-
----
-
-## Gebruikte technieken
-
-### Frontend
-- HTML (semantisch en toegankelijk)
-- CSS (responsive en styling)
-- JavaScript (interactie)
-
-### Backend
-- Node.js
-- Server-side rendering (`server.js`)
-
-### Functionaliteit
-- POST requests (form handling)
-- Basis CRUD:
-  - Create → posts toevoegen  
-  - Delete → posts verwijderen  
-
----
-
-## Problemen en oplossingen
-
-Tijdens het project liep ik tegen meerdere uitdagingen aan:
-
-- Posts werden niet goed weergegeven  
-  → Opgelost door server-side rendering correct te implementeren  
-
-- Te veel reacties op de pagina  
-  → Opgelost met een delete functie  
-
-- Navigatie werkte niet goed op mobiel  
-  → Opgelost met een hamburger menu  
-
-- Dark mode nog niet volledig  
-  → Dit ben ik nog aan het verbeteren  
+  .highlight.fade {
+    border-color: transparent;
+  }
+}
+```
 
 ---
 
 ## Installatie
 
-1. Clone de repository:
+### Hoe zet je het op
+
 ```bash
-git clone <jouw-repository-link>
+# 1. Kloon de repository
+git clone https://github.com/JasinAhmed/the-web-is-for-everyone-interactive-functionality.git
+
+# 2. Ga naar de map
+cd the-web-is-for-everyone-interactive-functionality
+
+# 3. Installeer de packages
+npm install
+
+# 5. Start de server
+npm start
+```
+
+De website is nu te zien op `http://localhost:3000`.
+
+---
+
+## Bronnen
+
+- [Node.js documentatie](https://nodejs.org/en/docs)
+- [Express documentatie](https://expressjs.com/)
+- [Directus documentatie](https://docs.directus.io/)
+- [LiquidJS documentatie](https://liquidjs.com/)
+- [MDN – HTML formulieren](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+- [MDN – prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [CSS-Tricks – Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [npm – express](https://www.npmjs.com/package/express)
+- [npm – liquidjs](https://www.npmjs.com/package/liquidjs)
+- [npm – dotenv](https://www.npmjs.com/package/dotenv)
+- [npm – node-fetch](https://www.npmjs.com/package/node-fetch)
+
+---
+
+## Licentie
+This project is licensed under the terms of the [MIT license](./LICENSE).
