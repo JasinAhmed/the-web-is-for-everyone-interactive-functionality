@@ -1092,217 +1092,625 @@ ul{
     transition:none !important;
   }
 }
-.lado-sectie {
-  padding: 3rem 0;
+
+
+/* 13) LADO / ACCORDION */
+
+.lado-sectie{
+  padding:3rem 0;
 }
 
-.lado-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+.lado-grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:2rem;
 }
 
-.lado-grid-item {
-  margin: 0;
-  padding: 0;
+.lado-grid-item{
+  margin:0;
+  padding:0;
 }
 
-.lado-kaart {
-  width: 100%;
-  min-height: 210px;
-  border: 2px solid #cfcfcf;
-  border-radius: 14px;
-  background: #f5f5f5;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+.lado-kaart{
+  width:100%;
+  min-height:210px;
+  border:2px solid #cfcfcf;
+  border-radius:14px;
+  background:#f5f5f5;
+  overflow:hidden;
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.lado-kaart:hover {
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+.lado-kaart:hover{
+  background:#ffffff;
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  transform:translateY(-2px);
 }
 
-.lado-summary {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-  padding: 1.75rem 4.5rem 1.5rem 1.75rem;
-  min-height: 210px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.lado-summary{
+  list-style:none;
+  cursor:pointer;
+  position:relative;
+  padding:1.75rem 4.5rem 1.5rem 1.75rem;
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.lado-summary::-webkit-details-marker {
-  display: none;
+.lado-summary::-webkit-details-marker{
+  display:none;
 }
 
-.lado-summary h3 {
-  margin: 0;
-  max-width: 32rem;
-  font-size: 1.15rem;
-  line-height: 1.35;
-  font-weight: 700;
-  color: #111827;
+.lado-summary h3{
+  margin:0;
+  max-width:32rem;
+  font-size:1.15rem;
+  line-height:1.35;
+  font-weight:700;
+  color:#111827;
 }
 
-.lado-leesmeer {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #111827;
+.lado-leesmeer{
+  margin:0;
+  font-size:1rem;
+  font-weight:500;
+  color:#111827;
 }
 
-.plus {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  width: 18px;
-  height: 18px;
+.plus{
+  position:absolute;
+  right:1.5rem;
+  bottom:1.5rem;
+  width:18px;
+  height:18px;
 }
 
 .plus::before,
-.plus::after {
-  content: "";
-  position: absolute;
-  background: #ef4444;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+.plus::after{
+  content:"";
+  position:absolute;
+  background:#ef4444;
+  transition:transform 0.2s ease, background-color 0.2s ease;
 }
 
-.plus::before {
-  width: 18px;
-  height: 2px;
-  left: 0;
-  top: 8px;
+.plus::before{
+  width:18px;
+  height:2px;
+  left:0;
+  top:8px;
 }
 
-.plus::after {
-  width: 2px;
-  height: 18px;
-  top: 0;
-  left: 8px;
+.plus::after{
+  width:2px;
+  height:18px;
+  top:0;
+  left:8px;
 }
 
 .lado-kaart:hover .plus::before,
-.lado-kaart:hover .plus::after {
-  background: #0b63ce;
+.lado-kaart:hover .plus::after{
+  background:#0b63ce;
 }
 
-.lado-kaart[open] .plus::after {
-  transform: scaleY(0);
+.lado-kaart[open] .plus::after{
+  transform:scaleY(0);
 }
 
-.lado-detail-inhoud {
-  padding: 0 1.75rem 1.75rem;
+.lado-detail-inhoud{
+  padding:0 1.75rem 1.75rem;
 }
 
-.lado-detail-inhoud p {
-  margin: 0;
-  color: #4b5563;
-  line-height: 1.7;
+.lado-detail-inhoud p{
+  margin:0;
+  color:#4b5563;
+  line-height:1.7;
 }
 
-@media (max-width: 900px) {
-  .lado-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+@media (max-width: 900px){
+  .lado-grid{
+    grid-template-columns:1fr;
+    gap:1.5rem;
   }
 
   .lado-kaart,
-  .lado-summary {
-    min-height: auto;
+  .lado-summary{
+    min-height:auto;
   }
 
-  .lado-summary {
-    padding-right: 4rem;
+  .lado-summary{
+    padding-right:4rem;
   }
 }
-.lado-overzicht {
-  width: 100%;
+
+.lado-overzicht{
+  width:100%;
 }
 
-.lado-uitleg {
-  margin-bottom: 1.5rem;
-  color: #4b5563;
-  line-height: 1.6;
+.lado-uitleg{
+  margin-bottom:1.5rem;
+  color:#4b5563;
+  line-height:1.6;
 }
 
-.lado-kolommen {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
+.lado-kolommen{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  align-items:start;
 }
 
-.lado-kolom {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.lado-kolom{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
 }
 
-.lado-accordion {
-  border: 1px solid #dbe3ea;
-  border-radius: 1rem;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+.lado-accordion{
+  border:1px solid #dbe3ea;
+  border-radius:1rem;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(15, 23, 42, 0.05);
 }
 
-.lado-accordion summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 1.1rem 3.2rem 1.1rem 1.25rem;
-  font-weight: 700;
-  font-size: 1rem;
-  color: #102033;
-  position: relative;
-  transition: background 0.2s ease;
+.lado-accordion summary{
+  list-style:none;
+  cursor:pointer;
+  padding:1.1rem 3.2rem 1.1rem 1.25rem;
+  font-weight:700;
+  font-size:1rem;
+  color:#102033;
+  position:relative;
+  transition:background 0.2s ease;
 }
 
-.lado-accordion summary::-webkit-details-marker {
-  display: none;
+.lado-accordion summary::-webkit-details-marker{
+  display:none;
 }
 
-.lado-accordion summary:hover {
-  background: #f7fafc;
+.lado-accordion summary:hover{
+  background:#f7fafc;
 }
 
-.lado-accordion summary::after {
-  content: "+";
+.lado-accordion summary::after{
+  content:"+";
+  position:absolute;
+  right:1.25rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.4rem;
+  font-weight:400;
+  color:#1d4ed8;
+}
+
+.lado-accordion[open] summary::after{
+  content:"–";
+}
+
+.lado-accordion p{
+  margin:0;
+  padding:0 1.25rem 1rem;
+  line-height:1.65;
+  color:#334155;
+}
+
+.lado-accordion p:first-of-type{
+  padding-top:0.25rem;
+}
+
+.lado-accordion p:last-of-type{
+  padding-bottom:1.25rem;
+}
+
+@media (max-width: 900px){
+  .lado-kolommen{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* 14) TALENT AWARD PAGINA */
+
+.talent-award-pagina{
+  background:#ffffff;
+  color:#111111;
+}
+
+/* --- hero donkerblauw --- */
+.talent-hero-donker{
+  margin-top:0;
+  background:#0a4cab;
+  padding:5rem 0 5.5rem;
+}
+
+.talent-hero-donker__inner{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap:4rem;
+  align-items:center;
+}
+
+.talent-hero-donker__content{
+  color:#ffffff;
+}
+
+.talent-breadcrumb{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  font-size:1rem;
+  margin-bottom:2rem;
+}
+
+.talent-breadcrumb--wit a,
+.talent-breadcrumb--wit span{
+  color:#ffffff;
+}
+
+.talent-hero-donker__content h1{
+  margin:0 0 1.5rem;
+  font-size:clamp(3rem, 6vw, 4.5rem);
+  line-height:1.02;
+  letter-spacing:-0.03em;
+  color:#ffffff;
+}
+
+.talent-hero-donker__intro{
+  margin:0;
+  max-width:38rem;
+  font-size:1.1rem;
+  line-height:1.9;
+  color:#ffffff;
+}
+
+.knop-hero-wit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:2rem;
+  min-height:68px;
+  padding:0 2rem;
+  border:1.5px solid #ffffff;
+  border-radius:20px;
+  color:#ffffff;
+  font-weight:600;
+  font-size:1.05rem;
+  text-decoration:none;
+
+  @media (any-pointer: fine){
+    &:hover{
+      background:rgba(255,255,255,.08);
+      text-decoration:none;
+    }
+  }
+}
+
+.talent-hero-donker__image{
+  margin:0;
+}
+
+.talent-hero-donker__image img{
+  display:block;
+  width:100%;
+  height:475px;
+  object-fit:cover;
+  border-radius:2rem;
+}
+
+/* --- licht vlak onder hero --- */
+.info-vlak{
+  background:#f7f7f7;
+  padding:4rem 0;
+}
+
+/* --- blauwe info blokken --- */
+.info-blokken-blauw{
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:1.75rem;
+}
+
+.info-kaart{
+  border-radius:2rem;
+  padding:2.5rem;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.info-kaart.licht{
+  background:#dfeaf6;
+  border:1px solid #0a4cab;
+}
+
+.info-kaart.donker{
+  background:#0a4cab;
+  color:#ffffff;
+  border:1px solid #0a4cab;
+}
+
+.info-kaart h2{
+  margin:1.5rem 0 1rem;
+  font-size:1.9rem;
+  line-height:1.2;
+  font-weight:700;
+}
+
+.info-kaart p{
+  margin:0;
+  font-size:1rem;
+  line-height:1.9;
+}
+
+.info-icon{
+  display:flex;
+  gap:.6rem;
+  align-items:center;
+}
+
+.dot{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+.dot.rood{
+  background:#eb5b34;
+}
+
+.dot.blauw{
+  background:#0a4cab;
+}
+
+.dot.wit{
+  background:#ffffff;
+}
+
+/* --- genomineerden vlak --- */
+.genomineerden-vlak{
+  background:#f7f7f7;
+  padding:0 0 5rem;
+}
+
+.genomineerden-overzicht{
+  padding-bottom:0;
+}
+
+.genomineerden-kop{
+  margin-bottom:2.5rem;
+}
+
+.genomineerden-kop h2{
+  margin:0 0 .75rem;
+  font-size:clamp(2.5rem, 4vw, 4.5rem);
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.03em;
+  color:#111111;
+}
+
+.genomineerden-kop p{
+  margin:0;
+  max-width:48rem;
+  font-size:1rem;
+  line-height:1.7;
+  color:#222222;
+}
+
+/* --- grid genomineerden --- */
+.talent-award-pagina .genomineerden-grid{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:1.75rem;
+}
+
+.talent-award-pagina .genomineerden-grid__item{
+  margin:0;
+}
+
+/* --- kaarten genomineerden --- */
+.talent-award-pagina .genomineerde-kaart{
+  height:100%;
+  background:#ffffff;
+  border:1px solid #d6e0ea;
+  border-radius:1.75rem;
+  padding:1.5rem;
+  overflow:visible;
+  box-shadow:none;
+}
+
+.talent-award-pagina .genomineerde-kaart__link{
+  display:block;
+  height:100%;
+  text-decoration:none;
+  color:inherit;
+}
+
+.talent-award-pagina .genomineerde-kaart .kaart-afbeelding{
+  margin:0 0 1.25rem;
+  overflow:hidden;
+  border-radius:1.25rem;
+}
+
+.talent-award-pagina .genomineerde-kaart .kaart-afbeelding img{
+  display:block;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:1.25rem;
+  background:#f2f2f2;
+}
+
+.talent-award-pagina .genomineerde-kaart .kaart-inhoud h3{
+  margin:0 0 .75rem;
+  font-size:1.15rem;
+  line-height:1.25;
+  font-weight:700;
+  color:#111111;
+}
+
+.talent-award-pagina .genomineerde-kaart .kaart-meta{
+  margin:0 0 .45rem;
+  font-size:.98rem;
+  line-height:1.55;
+  color:#27466b;
+}
+
+.kaart-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  margin-top:.85rem;
+  font-size:1rem;
+  font-weight:600;
+  color:#111111;
+}
+
+.kaart-link::after{
+  content:"→";
+  transition:transform .2s ease;
+}
+
+.talent-award-pagina .genomineerde-kaart__link:hover .kaart-link::after{
+  transform:translateX(4px);
+}
+
+.talent-award-pagina .lege-staat{
+  background:#ffffff;
+  border:1px solid #d6e0ea;
+  border-radius:1.5rem;
+  padding:2rem;
+}
+
+.talent-award-pagina .lege-staat p{
+  margin:0;
+  line-height:1.6;
+}
+
+/* --- responsive --- */
+@media (max-width: 1200px){
+  .talent-hero-donker__inner{
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+  }
+
+  .talent-hero-donker__image img{
+    height:420px;
+  }
+}
+
+@media (max-width: 980px){
+  .talent-hero-donker{
+    padding:4rem 0;
+  }
+
+  .talent-hero-donker__inner{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .talent-award-pagina .genomineerden-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .talent-hero-donker{
+    padding:3rem 0;
+  }
+
+  .talent-breadcrumb{
+    margin-bottom:1.5rem;
+    font-size:.95rem;
+  }
+
+  .talent-hero-donker__intro{
+    font-size:1rem;
+  }
+
+  .knop-hero-wit{
+    min-height:58px;
+    padding:0 1.4rem;
+  }
+
+  .talent-hero-donker__image img{
+    height:260px;
+    border-radius:1.25rem;
+  }
+
+  .info-vlak{
+    padding:2.5rem 0;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .info-kaart{
+    padding:1.75rem;
+    min-height:auto;
+  }
+
+  .info-kaart h2{
+    font-size:1.5rem;
+  }
+
+  .genomineerden-vlak{
+    padding:0 0 3rem;
+  }
+
+  .talent-award-pagina .genomineerden-grid{
+    grid-template-columns:1fr;
+    gap:1.25rem;
+  }
+
+  .talent-award-pagina .genomineerde-kaart{
+    padding:1rem;
+  }
+
+  .talent-award-pagina .genomineerde-kaart .kaart-afbeelding img{
+    height:200px;
+    border-radius:1rem;
+  }
+
+  .talent-award-pagina .genomineerde-kaart .kaart-inhoud h3{
+    font-size:1.05rem;
+  }
+
+  .talent-award-pagina .genomineerde-kaart .kaart-meta{
+    font-size:.95rem;
+  }
+}
+.skip-link {
   position: absolute;
-  right: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #1d4ed8;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
 }
 
-.lado-accordion[open] summary::after {
-  content: "–";
-}
-
-.lado-accordion p {
-  margin: 0;
-  padding: 0 1.25rem 1rem;
-  line-height: 1.65;
-  color: #334155;
-}
-
-.lado-accordion p:first-of-type {
-  padding-top: 0.25rem;
-}
-
-.lado-accordion p:last-of-type {
-  padding-bottom: 1.25rem;
-}
-
-@media (max-width: 900px) {
-  .lado-kolommen {
-    grid-template-columns: 1fr;
-  }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
