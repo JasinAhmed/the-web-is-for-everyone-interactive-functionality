@@ -14,7 +14,7 @@
   <div class="hoofd-navigatie-balk">
     <nav class="hoofd-navigatie pagina-container">
       <a href="/" class="logo-link">
-        <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
+        <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Associate Degrees logo" width="180" height="45">
       </a>
 
       <button class="hamburger" id="hamburger" type="button">Menu</button>
@@ -44,7 +44,7 @@
       {% if nominee.profile_picture %}
         <img
           src="https://fdnd-agency.directus.app/assets/{{ nominee.profile_picture }}"
-          alt="{{ nominee.title }}"
+          alt="Profielfoto van {{ nominee.title }}"
           width="500"
           height="500">
       {% else %}
@@ -103,11 +103,11 @@
         <section>
           <h3>Nominatie Hogeschool</h3>
           <p>
-            Thijs is een student op wie wij enorm trots zijn. Als SLB’er heb ik Thijs leren kennen
+            Thijs is een student op wie wij enorm trots zijn. Als SLB'er heb ik Thijs leren kennen
             als een betrokken, bescheiden en zeer leergierige Ad-professional, die zijn vakmanschap
             vooral laat zien door zijn houding en handelen, en niet door zichzelf op de voorgrond
             te plaatsen. Voor een project in leerjaar 1 nam hij hierbij het voortouw om op zijn stage
-            een preventieve activiteit met Alpaca’s te regelen voor cliënten, wat een groot succes was!
+            een preventieve activiteit met Alpaca's te regelen voor cliënten, wat een groot succes was!
           </p>
           <p>
             In samenwerking met medestudenten, docenten en het werkveld is Thijs respectvol,
@@ -132,24 +132,24 @@
             van Zorg en Veiligheid, dan verdient Thijs Kiens het wel.
           </p>
           <p>
-            <strong>Fransien Hummel</strong>, SLB’er bij opleiding Ad Zorg en Veiligheid, ook namens het gehele docententeam en de Academie.
+            <strong>Fransien Hummel</strong>, SLB'er bij opleiding Ad Zorg en Veiligheid, ook namens het gehele docententeam en de Academie.
           </p>
         </section>
 
         <section>
           <h3>Aanbeveling externe stakeholder</h3>
           <p>
-            “Thijs heeft alles op orde, beantwoordt vragen met een lach en is hulpvaardig. Vanaf de start
+            "Thijs heeft alles op orde, beantwoordt vragen met een lach en is hulpvaardig. Vanaf de start
             van zijn stage bij sociaal beheer neemt hij zelf de verantwoordelijkheid voor zijn leerproces.
             Op dag 1 kreeg hij zijn spullen, de dag erna liep hij met iemand mee en op dag 3 heeft hij,
-            op eigen initiatief, zelfstandig bewoners bezocht.”
+            op eigen initiatief, zelfstandig bewoners bezocht."
           </p>
           <p>
-            “Thijs legt makkelijk contact, hij is een verbinder. Aan het begin van de stage had hij een overleg
-            met wijkagenten, stelde zich voor als ‘de nieuwe directeur’ maar uiteraard met een lach. Het ijs was
+            "Thijs legt makkelijk contact, hij is een verbinder. Aan het begin van de stage had hij een overleg
+            met wijkagenten, stelde zich voor als 'de nieuwe directeur' maar uiteraard met een lach. Het ijs was
             direct gebroken. Een bewoner die 40 jaar bij Cazas woonde krijgt normaliter bezoek vanuit coöperatie,
             dat lukte echter niet overdag en dus maakte Thijs in de avond tijd vrij om langs te gaan. Of die keer
-            dat hij kacheltjes verzamelde toen er een gaslek op de Eikenlaan was. Kortom; Thijs is van alle markten thuis.”
+            dat hij kacheltjes verzamelde toen er een gaslek op de Eikenlaan was. Kortom; Thijs is van alle markten thuis."
           </p>
           <p><strong>Lisa van Zuilen</strong>, sociaal beheerder bij Cazas Wonen.</p>
         </section>
@@ -161,10 +161,6 @@
     <section class="reactie-formulier-sectie">
       <h2>Laat een reactie achter</h2>
 
-      {% comment %}
-        Ik zet novalidate op het formulier, zodat ik mijn eigen error state kan laten zien
-        in plaats van de standaard browser melding.
-      {% endcomment %}
       <form action="/genomineerden/{{ nominee.id }}" method="POST" class="reactie-formulier" novalidate>
         <label for="naam">Naam</label>
         <input type="text" id="naam" name="naam" required>
