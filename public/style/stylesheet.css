@@ -13,7 +13,7 @@
 
   /* NEUTRALS */
   --n-900:#13171D;
-  --n-500:#435264;
+  --n-500:#2F3B4A;
   --n-100:#D2D5D9;
   --n-050:#FAFAFA;
   --wit:#FFFFFF;
@@ -22,7 +22,7 @@
   --bg:#EAF3FF;
   --tekst:var(--n-900);
   --tekst-zacht:var(--n-500);
-  --nav-tekst:#003B82;
+  --nav-tekst:#002A5C;
 
   /* SURFACES */
   --surface:#FFFFFF;
@@ -53,58 +53,70 @@
   --container:1720px;
 }
 
-/* kleine dark mode (alleen overrides) */
+/* Dark mode */
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#000C1A;
     --tekst:#FAFAFA;
-    --tekst-zacht:#A1AEBD;
-    --nav-tekst:#8FC1FF;
+    --tekst-zacht:#C4D0DC;
+    --nav-tekst:#B8D9FF;
 
     --surface:#001F44;
     --surface-2:#002A5C;
-    --border:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.12);
 
     --shadow:0 10px 22px rgba(0,0,0,.40);
   }
 }
 
-footer {
-    background-color: #00408f;
-    padding: 40px;
-    margin-top: 40px;
-    color: #fff;
+footer{
+  background-color:#00408f;
+  padding:40px;
+  margin-top:40px;
+  color:#fff;
 
-    & a {
-        color: #fff;
-        text-decoration: none;
+  a{
+    color:#fff;
+    text-decoration:none;
+  }
 
-        &:hover {
-            text-decoration: underline;
-        }
+  a:hover{
+    text-decoration:underline;
+  }
 
-        &:visited {
-            color: #fff;
-        }
-    }
+  a:visited{
+    color:#fff;
+  }
 
-    & .navContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 16px;
-        align-content: space-evenly;
+  .navContainer{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:16px;
+    align-content:space-evenly;
+    margin-top:40px;
+  }
 
-        margin-top: 40px;
+  .navContainer section ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+  }
 
-        & section ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-    }
+  hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #fff;
+  }
+}
 
-    & hr {
-        width: 100%;
-        border-top: 1px solid #fff;
-    }
+@media (max-width: 900px){
+  footer .navContainer{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  footer .navContainer{
+    grid-template-columns:1fr;
+  }
 }
