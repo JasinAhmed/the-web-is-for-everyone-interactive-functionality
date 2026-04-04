@@ -14,7 +14,7 @@
   <div class="hoofd-navigatie-balk">
     <nav class="hoofd-navigatie pagina-container">
       <a href="/" class="logo-link">
-        <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Ad's" width="180" height="45">
+        <img src="/style/assets/Adconnect.svg" alt="Overlegplatform Associate Degrees logo" width="180" height="45">
       </a>
 
       <button class="hamburger" id="hamburger" type="button">
@@ -56,12 +56,12 @@
         {% for student in nominees %}
           {% if student.title and student.title != blank %}
             <li>
-              <article class="genomineerde-kaart">
+              <div class="genomineerde-kaart">
                 <figure class="kaart-afbeelding">
                   {% if student.profile_picture %}
                     <img
                       src="https://fdnd-agency.directus.app/assets/{{ student.profile_picture }}"
-                      alt="{{ student.title }}"
+                      alt="Profielfoto van {{ student.title }}"
                       width="220"
                       height="220">
                   {% else %}
@@ -90,7 +90,7 @@
                     </a>
                   </p>
                 </section>
-              </article>
+              </div>
             </li>
           {% endif %}
         {% endfor %}
